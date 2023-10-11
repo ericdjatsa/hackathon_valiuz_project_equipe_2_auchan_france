@@ -41,7 +41,7 @@ explore: profiles_scores_tickets_produits {
   join: tickets_detailled {
     relationship: one_to_many
     type: inner
-    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.product_uid} AND ${tickets_detailled.member} = ${tickets.member} AND ${tickets.date_ticket_date} = ${tickets_detailled.date_product_date} ;;
+    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.ticket_uid} AND ${tickets_detailled.member} = ${tickets.member} ;;
   }
   join: product_nomenclature {
     relationship: one_to_many
@@ -57,7 +57,7 @@ explore: explore_hackaton{
   join: tickets_detailled {
     relationship: one_to_many
     type: inner
-    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.product_uid} AND ${tickets_detailled.member} = ${tickets.member} AND ${tickets.date_ticket_date} = ${tickets_detailled.date_product_date};;
+    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.ticket_uid} AND ${tickets_detailled.member} = ${tickets.member};;
   }
   join: product_nomenclature {
     relationship: one_to_many
@@ -84,7 +84,7 @@ explore: evol_client{
   join: tickets_detailled {
     relationship: one_to_many
     type: inner
-    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.product_uid} AND ${tickets.date_ticket_date} = ${tickets_detailled.date_product_date} AND ${tickets_detailled.member} = ${tickets.member};;
+    sql_on: ${tickets.ticket_uid} = ${tickets_detailled.ticket_uid} AND ${tickets_detailled.member} = ${tickets.member} AND ${tickets.date_ticket_raw} = ${tickets_detailled.date_product_raw};;
   }
   join: product_nomenclature {
     relationship: one_to_many
